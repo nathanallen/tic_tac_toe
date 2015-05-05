@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  width: 100vh;
+}
+
+div {
+  height: 100vh;
+  width: 100vh;
+  overflow: hidden;
+}
+
+.cell {
+  float: left;
+  height: 31vh;
+  width: 31vh;
+  border: 1vh solid rgba(0,0,0,.5);
+  border-radius: 2vh;
+  margin: 1vh;
+  line-height: 39vh;
+  font-size: 26vh;
+  font-family: fantasy;
+  text-align: center;
+  color: rgba(0,0,0,0);
+}
+
+.active {
+  transition: color .5s ease-in;
+  color: rgba(0,0,0,1);
+}
+
+.win {
+  background: lightblue;
+}
+
+.lose {
+  background: red;
+}
