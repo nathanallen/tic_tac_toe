@@ -9,6 +9,11 @@ function Board(game){
   var boardEl = document.querySelector("div");
   this.cells = window.cells = [];
 
+  // disable selection of board on click
+  boardEl.addEventListener("click", function(){
+    document.getSelection().empty()
+  })
+
   function createCellsList(){
     for(var i=0; i<9; i++){
       self.cells.push(new Cell(game, i))
@@ -67,7 +72,6 @@ function Cell(game, index){
   this.element = null;
 
   function addSymbol(e){
-
     self.symbol = game.currentSymbol();
     e.target.innerText = self.symbol;
     e.target.classList.add("active");
