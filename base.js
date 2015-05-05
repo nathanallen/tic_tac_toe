@@ -1,12 +1,16 @@
 document.addEventListener("DOMContentLoaded",function(){
 
-  window.game = new Game(Board, Cell);
+  var nGames = 1;
+  window.game = [];
+  while(nGames--){
+    window.game[nGames] = new Game(Board, Cell, nGames);  
+  }
 
 })
 
-function Board(game){
+function Board(game, gameNumber){
   var self = this;
-  var boardEl = document.querySelector("div");
+  var boardEl = document.createElement("div");
   this.cells = window.cells = [];
 
   // disable selection of board on click
@@ -35,6 +39,7 @@ function Board(game){
       boardEl.appendChild(cellEl);
       cell.handleClick(cellEl, index);
     });
+    document.querySelector("body").appendChild(boardEl)
   }
 
   this.gameOver = function(status){
@@ -89,10 +94,10 @@ function Cell(game, index){
   }
 }
 
-function Game(Board, Cell){
+function Game(Board, Cell, gameNumber){
   var self = this;
   var symbols = ["X","0"];
-  this.board = new Board(this);
+  this.board = new Board(this, gameNumber);
   this.currentSymbol = function(){
     symbols.push(symbols.shift());
     return symbols[0]

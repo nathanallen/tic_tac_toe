@@ -13,6 +13,11 @@ div {
   overflow: hidden;
 }
 
+div + div {
+  border-top: 1vh solid rgba(0,0,0,.5);
+  padding-top: 1vh;
+}
+
 .cell {
   float: left;
   height: 31vh;
