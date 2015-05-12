@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded",function(){
 function Board(game, gameNumber){
   var self = this;
   var boardEl = document.createElement("div");
+      boardEl.classList.add("board");
   this.cells = window.cells = [];
 
   // disable selection of board on click

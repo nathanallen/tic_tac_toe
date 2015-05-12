@@ -5,16 +5,18 @@
 body {
   margin: 0 auto;
   width: 100vh;
+  background-color: #F9F9F9;
 }
 
-div {
+div.board {
   height: 100vh;
   width: 100vh;
   overflow: hidden;
+  border-radius: 1vh;
+  transition: background-color .5s ease;
 }
 
 div + div {
-  border-top: 1vh solid rgba(0,0,0,.5);
   padding-top: 1vh;
 }
 
@@ -22,25 +24,38 @@ div + div {
   float: left;
   height: 31vh;
   width: 31vh;
-  border: 1vh solid rgba(0,0,0,.5);
+  -moz-box-shadow:    .5vh .5vh .25vh .5vh rgba(0,0,0,.2);
+  -webkit-box-shadow: .5vh .5vh .25vh .5vh rgba(0,0,0,.2);
+  box-shadow:         .5vh .5vh .25vh .5vh rgba(0,0,0,.2);
   border-radius: 2vh;
   margin: 1vh;
   line-height: 39vh;
   font-size: 26vh;
   font-family: fantasy;
   text-align: center;
-  color: rgba(0,0,0,0);
+  color: rgba(255,255,255,0);
+  background-color: white;
 }
 
 .active {
-  transition: color .5s ease-in;
+  transition: color .5s ease;
   color: rgba(0,0,0,1);
 }
 
-.win {
-  background: lightblue;
+.win .cell {
+  transition: box-shadow .5s ease;
+  transition: -moz-box-shadow .5s ease;
+  transition: -webkit-box-shadow .5s ease;
+  -moz-box-shadow:    .5vh .5vh .5vh .5vh rgba(0,129,255,.2);
+  -webkit-box-shadow: .5vh .5vh .5vh .5vh rgba(0,129,255,.2);
+  box-shadow:         .5vh .5vh .5vh .5vh rgba(0,129,255,.2);
 }
 
-.lose {
-  background: red;
+.lose .cell {
+  transition: box-shadow .5s ease;
+  transition: -moz-box-shadow .5s ease;
+  transition: -webkit-box-shadow .5s ease;
+  -moz-box-shadow:    .5vh .5vh .5vh .5vh rgba(255,0,0,.2);
+  -webkit-box-shadow: .5vh .5vh .5vh .5vh rgba(255,0,0,.2);
+  box-shadow:         .5vh .5vh .5vh .5vh rgba(255,0,0,.2);
 }
